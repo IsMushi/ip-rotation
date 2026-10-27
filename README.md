@@ -161,6 +161,23 @@ Notes:
 - Tor Browser does all of this by itself; use it when you want maximum
   protection rather than this Chrome profile.
 
+### browser_fetch.py (experimental)
+
+Sites that reject curl (see `403 CF1` above) still work in a real browser.
+`browser_fetch.py` drives the installed Chrome over the DevTools protocol with
+the same proxy and WebRTC settings:
+
+```powershell
+python browser_fetch.py https://whatismyipaddress.com/ --json
+python browser_fetch.py https://example.com --text --rotate-on-block
+```
+
+**Status: unfinished.** It launches Chrome, navigates, and returns the page,
+but the DevTools websocket drops after `Page.navigate` on this machine, so the
+page snapshot is unreliable. The Cloudflare challenge is also returned instead
+of the solved page. `start-browser.ps1` is the working way to browse such sites
+today.
+
 ### Rotate and stop
 
 ```powershell
