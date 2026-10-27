@@ -1,0 +1,14 @@
+# Minimal torrc for a system Tor that tor_ip_swapper.py can attach to.
+# Put this in your Tor config directory (e.g. /etc/tor/torrc on Linux,
+# %APPDATA%\tor\torrc on Windows) and restart tor.
+
+SocksPort 9050
+ControlPort 9051
+
+# Pick ONE authentication method:
+
+# 1) Cookie auth (easiest, the script auto-detects the cookie path)
+CookieAuthentication 1
+
+# 2) Password auth (then run the script with --control-password SECRET)
+#HashedControlPassword 16:...

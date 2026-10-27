@@ -1,0 +1,16 @@
+# Runtime-generated files
+proxy.env
+proxy.env.cmd
+proxy.env.ps1
+*.log
+*.pid
+
+# Rotation state
+rotate.now
+rotate.done
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
